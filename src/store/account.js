@@ -25,7 +25,7 @@ export default {
     async login({ dispatch }, { username = '', password = '' }) {
       try {
         const { token } = await login({ username, password })
-        cookiesUtil.set('token', token) // Bearer是与后端约定好的token前缀，为帮助后端验证token合法性
+        cookiesUtil.set('token', token)
         dispatch('load') // 加载用户详细数据
       } catch (error) {
         console.error(error)
